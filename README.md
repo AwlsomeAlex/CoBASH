@@ -7,7 +7,7 @@ CoBASH is a project with the same goal as the original CoLinux (Which this is mo
 CoBASH isn't an alternative to using real Linux Distributions, as I love each and every one of them myself, but more as a tool to help developers that code in Linux but don't want to be slowed down by a virtual machine or switch to another partition. Something this also isn't is an Emulation or Virtualization, the Linux Subsystem communicates with the NT Kernel **DIRECTLY** and many things can be accessed by both (including filesystems, networking, etc.) Also, until the Creators Update for Windows 10 comes out, I'm not sure how the updated Linux Subsystem will react to this, so hoping it helps this project instead of completely break it or make it useless.
 
 ## Proof-Of-Concept:
-TBA
+![Proof-Of-Concept](https://raw.githubusercontent.com/AwlsomeAlex/CoBASH/master/docs/CoBASH_POC.png)
 
 ## License:
 * xMing - Public Domain [To be relicensed as GNU GPLv3 once CoBASH]
