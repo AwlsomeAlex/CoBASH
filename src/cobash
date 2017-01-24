@@ -1,0 +1,76 @@
+#!/bin/bash
+#########################################
+#                                       #
+# CoBASH (Cooperative Bash) Main Script #
+#                                       #
+#########################################
+#    Made by AwlsomeAlex [GNU GPLv3]    #
+#            Version: TRUNK             #
+#########################################
+
+## Call 'cobash.lib' to load all functions ##
+. ./cobash.lib
+
+## Check for Dialog before we continue ##
+which dialog &> /dev/null
+[ $? -ne 0 ] && echo "The Package 'dialog' is not installed but required, please install it to continue." && exit 1
+
+
+
+###################
+# Delete Function # deltempfiles
+######################################
+# This functio clears the temporary  #
+#  	 files created in the decision   #
+#   process by the program itself.   #
+######################################
+
+deletetempfiles()
+{
+	rm -f *.$$
+}
+
+
+
+#############
+# Main Menu #
+########################
+# The Main Menu which  #
+#  will be displayed   #
+# by dialog + terminal #
+########################
+
+trap 'deletetempfiles'  EXIT  # Calls 'deletetempfiles' on exit.
+
+while :
+do
+
+    dialog --clear --backtitle "CoBASH (Cooperative BASH) Main Script" --title "Main Menu:" \
+    --menu "Please select an option using the [UP/DOWN] keys." 15 75 6 \
+    "INSTALL_COBASH"	"Install the main componients for CoBASH." \
+    "INSTALL_DE"  		"Install a Desktop Enviornment to CoBASH." \
+    "INSTALL_EXTRAS"    "Install Extra Applications to CoBASH DE." \
+    "UNINSTALL_ALL"     "Uninstall CoBASH + Componients from WSL." \
+    "ABOUT"      		"Shows License and About for this script." \
+    "EXIT"     			"Exit this script and CoBASH alltogether." 2> menuchoices.$$
+
+    retopt=$?
+    choice=`cat menuchoices.$$`
+
+    case $retopt in
+
+           0) case $choice in
+
+                  INSTALL_COBASH)	  install_cobash ;;
+                  INSTALL_DE) 		  install_de ;;
+                  INSTALL_EXTRAS)     install_extras ;;
+                  UNINSTALL_ALL)      uninstall_all ;;
+                  ABOUT)    		  about ;;
+                  EXIT)     		  clear; exit 0;;
+
+              esac ;;
+
+          *)clear ; exit ;;
+    esac
+
+done
