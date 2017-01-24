@@ -8,6 +8,21 @@
 #            Version: TRUNK             #
 #########################################
 
+######################
+# Pre-Execution Test #
+################################
+# Files/Programs to be located #
+#  before CoBASH is executed.  #
+################################
+
+## Check if 'cobash.lib' exists. ##
+if [ -f "cobash.lib" ]
+then
+	echo "CoBASH Library has been found. Continuing..."
+else
+	echo "The CoBASH Library could not be found. Please place it in the same folder as the CoBASH Executable to continue." && exit 1
+fi
+
 ## Call 'cobash.lib' to load all functions ##
 . ./cobash.lib
 
