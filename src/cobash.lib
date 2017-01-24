@@ -58,6 +58,28 @@ check_dialog()
 ###########################
 
 test_lib()
-	{
-		echo "I Exist!" && exit 1
-	}
+{
+	clear && echo "I Exist!" && exit 1
+}
+
+
+
+##########################
+#------------------------#
+# About Screen Functions #
+#------------------------#
+##########################
+
+
+
+#########################
+# About Dialog Function # about
+##################################
+# This function provides a bit   #
+# of information of the project. #
+##################################
+
+about()
+{
+    dialog --clear --backtitle "CoBASH (Cooperative BASH) About Dialog" --title "About CoBASH:" --msgbox "CoBASH is a utility script used to control the BASH Terminal for the new Windows Subsystem for Linux. \n\n ---------- Created by: ----------- \n            AwlsomeAlex     \n ------------ Licenses: ----------- \n              GNU GPLv3     " 15 40
+}

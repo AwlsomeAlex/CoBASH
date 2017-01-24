@@ -46,11 +46,11 @@ do
     dialog --clear --backtitle "CoBASH (Cooperative BASH) Main Script" --title "Main Menu:" \
     --menu "Please select an option using the [UP/DOWN] keys." 15 75 6 \
     "INSTALL_COBASH"	"Install the main componients for CoBASH." \
-    "INSTALL_DE"  	"Install a Desktop Enviornment to CoBASH." \
+    "INSTALL_DE"  	    "Install a Desktop Enviornment to CoBASH." \
     "INSTALL_EXTRAS"    "Install Extra Applications to CoBASH DE." \
     "UNINSTALL_ALL"     "Uninstall CoBASH + Componients from WSL." \
-    "ABOUT"      	"Shows License and About for this script." \
-    "EXIT"     		"Exit this script and CoBASH alltogether." 2> menuchoices.$$
+    "ABOUT"      	    "Shows License and About for this script." \
+    "EXIT"     		    "Exit this script and CoBASH alltogether." 2> menuchoices.$$
 
     retopt=$?
     choice=`cat menuchoices.$$`
@@ -63,7 +63,7 @@ do
                   INSTALL_DE) 		  install_de ;;
                   INSTALL_EXTRAS)     install_extras ;;
 		          UNINSTALL_ALL)      uninstall_all ;;
-                  ABOUT)    		  test_lib ;;
+                  ABOUT)    		  about ;;
                   EXIT)     		  clear; exit 0;;
 
               esac ;;
