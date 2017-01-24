@@ -1,0 +1,24 @@
+#####################################
+#                                   #
+# CoBASH (Cooperative Bash) Library #
+#                                   #
+#####################################
+#  Made by AwlsomeAlex [GNU GPLv3]  #
+#          Version: TRUNK           #
+#####################################
+#####################################
+#          A Little Note:           #
+#####################################
+# The main existence of this library#
+# is so the functions can all be in #
+# one place instead of being random #
+# scattered on the script. Even     #
+# though it's unusual to find a lib #
+# for a shell script, I find it able#
+# to be a real help for organization#
+#####################################
+
+test_lib()
+	{
+		echo "I Exist!" && exit 1
+	}

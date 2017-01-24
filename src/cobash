@@ -80,7 +80,7 @@ do
                   INSTALL_DE) 		  install_de ;;
                   INSTALL_EXTRAS)     install_extras ;;
                   UNINSTALL_ALL)      uninstall_all ;;
-                  ABOUT)    		  about ;;
+                  ABOUT)    		  test_lib ;;
                   EXIT)     		  clear; exit 0;;
 
               esac ;;
