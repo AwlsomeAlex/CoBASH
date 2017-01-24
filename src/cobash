@@ -15,35 +15,18 @@
 #  before CoBASH is executed.  #
 ################################
 
-## Check if 'cobash.lib' exists. ##
-if [ -f "cobash.lib" ]
-then
-	echo "CoBASH Library has been found. Continuing..."
-else
-	echo "The CoBASH Library could not be found. Please place it in the same folder as the CoBASH Executable to continue." && exit 1
-fi
-
 ## Call 'cobash.lib' to load all functions ##
 . ./cobash.lib
 
-## Check for Dialog before we continue ##
-which dialog &> /dev/null
-[ $? -ne 0 ] && echo "The Package 'dialog' is not installed but required, please install it to continue." && exit 1
+if [ -f "cobash.lib" ]
+    then
+	   echo "CoBASH Library has been found. Continuing..."
+    else
+	   echo "The CoBASH Library could not be found. Please place it in the same folder as the CoBASH Executable to continue." && exit 1
+fi
 
-
-
-###################
-# Delete Function # deltempfiles
-######################################
-# This function clears the temporary #
-#   files created in the decision    #
-#   process by the program itself.   #
-######################################
-
-deletetempfiles()
-{
-	rm -f *.$$
-}
+## Check to make sure 'dialog' is present. ##
+check_dialog
 
 
 
@@ -55,7 +38,7 @@ deletetempfiles()
 # by dialog + terminal #
 ########################
 
-trap 'deletetempfiles'  EXIT  # Calls 'deletetempfiles' on exit.
+trap 'deltempfiles'  EXIT  # Calls 'deletetempfiles' on exit.
 
 while :
 do
@@ -78,8 +61,8 @@ do
 
                   INSTALL_COBASH)	  install_cobash ;;
                   INSTALL_DE) 		  install_de ;;
-                  INSTALL_EXTRAS)         install_extras ;;
-		  UNINSTALL_ALL)          uninstall_all ;;
+                  INSTALL_EXTRAS)     install_extras ;;
+		          UNINSTALL_ALL)      uninstall_all ;;
                   ABOUT)    		  test_lib ;;
                   EXIT)     		  clear; exit 0;;
 

@@ -18,6 +18,45 @@
 # to be a real help for organization#
 #####################################
 
+
+
+###################################
+# Delete Temporary Files Function # deltempfiles
+######################################
+# This function clears the temporary #
+#   files created in the decision    #
+#   process by the program itself.   #
+######################################
+
+deltempfiles()
+{
+    rm -f *.$$
+}
+
+
+
+#############################
+# Check for Dialog Function # check_dialog
+#############################
+# This function makes sure  #
+#    Dialog is present.     #
+#############################
+
+check_dialog()
+{
+    which dialog &> /dev/null
+    [ $? -ne 0 ] && echo "The Package 'dialog' is not installed but required, please install it to continue." && exit 1
+}
+
+
+#########################
+# Test Library Function # test_lib
+###########################
+# This function tests the #
+#   functionality of the  #
+# Library for debugging.  #
+###########################
+
 test_lib()
 	{
 		echo "I Exist!" && exit 1
