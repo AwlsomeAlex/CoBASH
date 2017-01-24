@@ -35,8 +35,8 @@ which dialog &> /dev/null
 ###################
 # Delete Function # deltempfiles
 ######################################
-# This functio clears the temporary  #
-#  	 files created in the decision   #
+# This function clears the temporary #
+#   files created in the decision    #
 #   process by the program itself.   #
 ######################################
 
@@ -63,11 +63,11 @@ do
     dialog --clear --backtitle "CoBASH (Cooperative BASH) Main Script" --title "Main Menu:" \
     --menu "Please select an option using the [UP/DOWN] keys." 15 75 6 \
     "INSTALL_COBASH"	"Install the main componients for CoBASH." \
-    "INSTALL_DE"  		"Install a Desktop Enviornment to CoBASH." \
+    "INSTALL_DE"  	"Install a Desktop Enviornment to CoBASH." \
     "INSTALL_EXTRAS"    "Install Extra Applications to CoBASH DE." \
     "UNINSTALL_ALL"     "Uninstall CoBASH + Componients from WSL." \
-    "ABOUT"      		"Shows License and About for this script." \
-    "EXIT"     			"Exit this script and CoBASH alltogether." 2> menuchoices.$$
+    "ABOUT"      	"Shows License and About for this script." \
+    "EXIT"     		"Exit this script and CoBASH alltogether." 2> menuchoices.$$
 
     retopt=$?
     choice=`cat menuchoices.$$`
@@ -78,8 +78,8 @@ do
 
                   INSTALL_COBASH)	  install_cobash ;;
                   INSTALL_DE) 		  install_de ;;
-                  INSTALL_EXTRAS)     install_extras ;;
-                  UNINSTALL_ALL)      uninstall_all ;;
+                  INSTALL_EXTRAS)         install_extras ;;
+		  UNINSTALL_ALL)          uninstall_all ;;
                   ABOUT)    		  test_lib ;;
                   EXIT)     		  clear; exit 0;;
 
